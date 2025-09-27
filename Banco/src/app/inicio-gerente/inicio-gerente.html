@@ -1,1 +1,92 @@
-<p>inicio-gerente works!</p>
+<div class="container">
+  <header class="header">
+    <h1>🏛️ InnovaBank</h1>
+    <div class="user-info">
+      <div class="avatar">RB</div>
+      <div class="user-details">
+        <h3>Rebeca Bautista</h3>
+        <p>Gerente General</p>
+      </div>
+      <button class="logout-btn" (click)="logout()">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <div class="dashboard-grid">
+    <div class="stat-card">
+      <div class="stat-number">$12.5M</div>
+      <div class="stat-label">Cartera Total</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">847</div>
+      <div class="stat-label">Clientes Activos</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1</div>
+      <div class="stat-label">Ejecutivos a Cargo</div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="left-panel">
+      <div class="panel">
+        <h2>⚡ Gestión Gerencial</h2>
+        <div class="actions-grid">
+          <button class="action-btn" (click)="manageTeam()">
+            <span class="action-icon">👥</span>
+            Dirigir Empleados
+          </button>
+          <button class="action-btn" (click)="handleComplaints()">
+            <span class="action-icon">🔧</span>
+            Resolver Quejas
+          </button>
+          <button class="action-btn" (click)="approveCredits()">
+            <span class="action-icon">✅</span>
+            Aprobar Créditos
+          </button>
+          <button class="action-btn" (click)="reviewReports()">
+            <span class="action-icon">📊</span>
+            Revisar Reportes
+          </button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>📋 Decisiones Pendientes</h2>
+        <div class="approval-list">
+          <div class="approval-item urgent" *ngFor="let item of pendingApprovals">
+            <div class="approval-info">
+              <h4>{{ item.title }}</h4>
+              <p>Cliente: {{ item.client }} - {{ item.amount }}</p>
+              <small>{{ item.date }}</small>
+            </div>
+            <div class="approval-actions">
+              <button class="btn-approve" (click)="approveItem(item)">Aprobar</button>
+              <button class="btn-reject" (click)="rejectItem(item)">Rechazar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="panel">
+        <h2>👥 Equipo de Trabajo</h2>
+        <div class="team-list">
+          <div class="team-member" *ngFor="let member of team" (click)="viewEmployeeDetails(member)">
+            <div class="member-avatar">{{ member.initials }}</div>
+            <div class="member-info">
+              <h4>{{ member.name }}</h4>
+              <p>{{ member.role }}</p>
+              <span class="performance" [ngClass]="member.performance.toLowerCase()">
+                {{ member.performance }}
+              </span>
+            </div>
+            <div class="member-actions">
+              <button class="btn-mini" (click)="assignTask(member, $event)">Asignar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

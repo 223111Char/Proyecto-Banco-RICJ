@@ -1,1 +1,201 @@
-<p>inicio-cliente works!</p>
+<div class="container">
+  <header class="header">
+    <h1>🏦 InnovaBank</h1>
+    <div class="user-info">
+      <div class="avatar">JT</div>
+      <div class="user-details">
+        <h3>Jocelyn Trinidad</h3>
+        <p>Cliente</p>
+      </div>
+      <button class="logout-btn" (click)="logout()">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <div class="balance-section">
+    <div class="main-balance">
+      <h2>Saldo Total</h2>
+      <div class="balance-amount">$40,650.75</div>
+      <p class="balance-currency">MXN</p>
+    </div>
+    <div class="all-actions">
+      <button class="action-btn" (click)="transfer()">
+        <span class="action-icon">💸</span> Transferir
+      </button>
+      <button class="action-btn" (click)="payBills()">
+        <span class="action-icon">🧾</span> Pagar Tarjeta
+      </button>
+      <button class="action-btn" (click)="deposit()">
+        <span class="action-icon">💰</span> Depositar
+      </button>
+      <button class="action-btn" (click)="withdraw()">
+        <span class="action-icon">🏧</span> Retirar
+      </button>
+      <button class="action-btn" (click)="payServices()">
+        <span class="action-icon">🧾</span> Servicios
+      </button>
+      <button class="action-btn" (click)="requestLoan()">
+        <span class="action-icon">💰</span> Préstamo
+      </button>
+      <button class="action-btn" (click)="openAccount()">
+        <span class="action-icon">📄</span> Nueva Cuenta
+      </button>
+      <button class="action-btn" (click)="requestCard()">
+        <span class="action-icon">💳</span> Tarjeta
+      </button>
+      <button class="action-btn" (click)="investments()">
+        <span class="action-icon">📈</span> Inversiones
+      </button>
+    </div>
+  </div>
+
+  <div class="accounts-grid">
+    <div class="account-card primary">
+      <div class="account-header">
+        <h3>Cuenta de Ahorro</h3>
+        <span class="account-number">****2847</span>
+      </div>
+      <div class="account-balance">$32,450.75</div>
+      <div class="account-actions">
+        <button (click)="viewDetails('ahorro')">Ver Detalles</button>
+      </div>
+    </div>
+
+    <div class="account-card credit">
+      <div class="account-header">
+        <h3>Tarjeta de Crédito</h3>
+        <span class="account-number">****8756</span>
+      </div>
+      <div class="account-balance">$8,200.00</div>
+      <div class="credit-limit">Límite: $25,000.00</div>
+      <div class="account-actions">
+        <button (click)="viewDetails('credito')">Ver Detalles</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="left-panel">
+      <div class="panel">
+        <h2>📊 Mis Movimientos</h2>
+        <div class="filters">
+          <select class="filter-select" (change)="filterTransactions($event.target.value)">
+            <option value="all">Todos los movimientos</option>
+            <option value="income">Ingresos</option>
+            <option value="expense">Gastos</option>
+            <option value="transfer">Transferencias</option>
+          </select>
+        </div>
+        <div class="transactions-list" id="transactionsList">
+          <div class="transaction-item income">
+            <div class="transaction-icon">💰</div>
+            <div class="transaction-details">
+              <h4>Depósito - Nómina</h4>
+              <p>Empresa ABC S.A. de C.V.</p>
+              <small>Hoy 08:30 AM</small>
+            </div>
+            <div class="transaction-amount positive">+$12,500.00</div>
+          </div>
+          <div class="transaction-item expense">
+            <div class="transaction-icon">🛒</div>
+            <div class="transaction-details">
+              <h4>Compra - Walmart</h4>
+              <p>Supermercado</p>
+              <small>Ayer 06:45 PM</small>
+            </div>
+            <div class="transaction-amount negative">-$1,245.50</div>
+          </div>
+          <div class="transaction-item transfer">
+            <div class="transaction-icon">💸</div>
+            <div class="transaction-details">
+              <h4>Transferencia Enviada</h4>
+              <p>A: María González</p>
+              <small>Ayer 02:15 PM</small>
+            </div>
+            <div class="transaction-amount negative">-$3,000.00</div>
+          </div>
+          <div class="transaction-item income">
+            <div class="transaction-icon">📄</div>
+            <div class="transaction-details">
+              <h4>Transferencia Recibida</h4>
+              <p>De: Carlos Mendoza</p>
+              <small>2 días</small>
+            </div>
+            <div class="transaction-amount positive">+$850.00</div>
+          </div>
+          <div class="transaction-item expense">
+            <div class="transaction-icon">⚡</div>
+            <div class="transaction-details">
+              <h4>Pago - CFE</h4>
+              <p>Servicio de Luz</p>
+              <small>3 días</small>
+            </div>
+            <div class="transaction-amount negative">-$420.75</div>
+          </div>
+          <div class="transaction-item expense">
+            <div class="transaction-icon">🏪</div>
+            <div class="transaction-details">
+              <h4>Compra - OXXO</h4>
+              <p>Tienda de conveniencia</p>
+              <small>4 días</small>
+            </div>
+            <div class="transaction-amount negative">-$125.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="panel">
+        <h2>💳 Mis Tarjetas</h2>
+        <div class="cards-container">
+          <div class="credit-card blue">
+            <div class="card-header">
+              <h4>Tarjeta de Débito</h4>
+              <div class="card-logo">🏦</div>
+            </div>
+            <div class="card-number">**** **** **** 2847</div>
+            <div class="card-holder">JOCELYN TRINIDAD S</div>
+            <div class="card-expiry">12/28</div>
+          </div>
+          <div class="credit-card gold">
+            <div class="card-header">
+              <h4>Tarjeta de Crédito</h4>
+              <div class="card-logo">💳</div>
+            </div>
+            <div class="card-number">**** **** **** 8756</div>
+            <div class="card-holder">JOCELYN TRINIDAD S</div>
+            <div class="card-expiry">08/27</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>📈 Resumen Financiero</h2>
+        <div class="financial-summary">
+          <div class="summary-item">
+            <div class="summary-icon income-icon">📈</div>
+            <div class="summary-details">
+              <h4>Ingresos del Mes</h4>
+              <div class="summary-amount positive">$25,750.00</div>
+            </div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-icon expense-icon">📉</div>
+            <div class="summary-details">
+              <h4>Gastos del Mes</h4>
+              <div class="summary-amount negative">$8,420.75</div>
+            </div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-icon savings-icon">💰</div>
+            <div class="summary-details">
+              <h4>Ahorro del Mes</h4>
+              <div class="summary-amount savings">$17,329.25</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
