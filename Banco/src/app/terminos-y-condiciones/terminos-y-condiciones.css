@@ -1,0 +1,94 @@
+/* Estilos para el contenedor del modal, que vivirá dentro del diálogo de Angular Material */
+.modal {
+    background: white;
+    border-radius: 12px;
+    width: 100%; /* Ocupará el 100% del contenedor del diálogo */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.modal-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.modal-footer {
+    border-top: 1px solid #ccc;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.btn-primary {
+    background: #00556F;
+    color: white;
+}
+
+.btn-secondary {
+    background: #ddd;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid #aaa;
+}
+
+
+/* Estilos específicos para la impresión */
+@media print {
+    body {
+        background: none;
+        display: block;
+        height: auto;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    .modal-footer, .modal-header h2 {
+        display: none;
+    }
+
+    .modal-content {
+        overflow-y: visible;
+        height: auto;
+    }
+}

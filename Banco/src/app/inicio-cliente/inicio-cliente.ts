@@ -60,9 +60,13 @@ export class InicioCliente {
     alert(`Ver detalles de ${accountType}`);
   }
 
-  filterTransactions(filterType: any): void {
-    const value = filterType;
-    console.log('Filtrar por:', value);
+  onFilterChange(event: Event): void {
+    const filterValue = (event.target as HTMLSelectElement).value;
+    this.filterTransactions(filterValue);
+  }
+
+  filterTransactions(filterType: string): void {
+    console.log('Filtrar por:', filterType);
     // Lógica de filtrado aquí
   }
 

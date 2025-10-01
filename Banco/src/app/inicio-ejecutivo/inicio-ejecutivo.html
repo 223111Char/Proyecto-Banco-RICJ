@@ -49,10 +49,7 @@
     <div class="right-panel">
       <div class="panel">
         <h2>👥 Clientes Recientes</h2>
-        <input type="text"
-               class="search-bar"
-               placeholder="🔍 Buscar cliente..."
-               (keyup)="searchClients($event.target.value)">
+        <input type="text" class="search-bar" placeholder="🔍 Buscar cliente..." (keyup)="onSearchInputChange($event)">
         <div class="client-list">
           <div class="client-item" *ngFor="let cliente of clientesFiltrados" (click)="abrirPerfil(cliente)">
             <div class="client-info">

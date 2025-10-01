@@ -1,0 +1,65 @@
+<div class="form-container">
+  <div class="form-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" alt="icono tarjeta">
+    Formulario de Solicitud de Tarjeta
+  </div>
+
+  <div class="form-body">
+    <div class="form-section">
+      <h3>Datos personales:</h3>
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre">
+      <label for="id">Número de Identificación:</label>
+      <input type="text" id="id">
+      <label for="curp">Número de Identificación/CURP:</label>
+      <input type="text" id="curp">
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono">
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email">
+    </div>
+    <div class="form-section">
+      <h3>Tipo de tarjeta:</h3>
+      <div class="radio-group">
+        <input type="radio" name="tipo" id="credito" checked>
+        <label for="credito">Crédito</label>
+        <input type="radio" name="tipo" id="debito">
+        <label for="debito">Débito</label>
+      </div>
+      <label for="ingresos">Ingresos mensuales:</label>
+      <input type="text" id="ingresos">
+      <label>Historial crediticio:</label>
+      <div class="radio-group">
+        <input type="radio" name="historial" id="si" checked>
+        <label for="si">Sí</label>
+        <input type="radio" name="historial" id="no">
+        <label for="no">No</label>
+      </div>
+      <label for="tipo-cuenta">Tipo de cuenta:</label>
+      <select id="tipo-cuenta">
+        <option value="">Seleccione</option>
+        <option>Ahorro</option>
+        <option>Corriente</option>
+        <option>Inversión</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-footer">
+    <div class="terms-section">
+      <input 
+        type="checkbox" 
+        id="terms" 
+        [(ngModel)]="aceptaTerminos" 
+        [disabled]="true"
+        style="pointer-events: none;">
+      <label for="terms" style="cursor: default;">
+        He leído y acepto los
+        <span class="link-terminos" (click)="abrirTerminos()">Términos y Condiciones</span>
+      </label>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="!aceptaTerminos" (click)="onContinuar()">Continuar</button>
+    <button class="btn btn-secondary" (click)="onCancelar()">Cancelar</button>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+.form-container {
+    background-color: white;
+    width: 850px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.form-header {
+    background-color: #5da2d5;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.form-header img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.form-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.form-section {
+    width: 48%;
+}
+
+.form-section h3 {
+    margin-bottom: 10px;
+}
+
+.form-section label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.radio-group {
+    margin-top: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+.terms-section {
+    margin: 10px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* Estilo para el checkbox deshabilitado */
+input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.form-footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.btn-primary {
+    background-color: #a7d4f7;
+    color: #000;
+}
+
+.btn-primary:disabled {
+    background-color: #dceaf5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilos para el link de términos y condiciones */
+.link-terminos {
+    color: #5da2d5;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.link-terminos:hover {
+    color: #337ab7;
+}

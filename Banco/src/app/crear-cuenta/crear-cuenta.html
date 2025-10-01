@@ -1,1 +1,102 @@
-<p>crear-cuenta works!</p>
+<div class="container">
+    <div class="header">
+        <h1>
+            <div class="icon-placeholder">👤</div>
+            Crear cuenta
+            <div class="icon-placeholder">👤</div>
+        </h1>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nombreCompleto">
+                <div class="label-icon">👤</div>
+                Nombre completo
+            </label>
+            <input type="text" id="nombreCompleto" placeholder="Ingresa tu nombre completo"
+                   name="nombreCompleto" [(ngModel)]="cuentaModel.nombreCompleto">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="telefono">
+                    <div class="label-icon">📞</div>
+                    Teléfono
+                </label>
+                <input type="tel" id="telefono" placeholder="Número de teléfono"
+                       name="telefono" [(ngModel)]="cuentaModel.telefono">
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    <div class="label-icon">✉️</div>
+                    Correo
+                </label>
+                <input type="email" id="email" placeholder="Correo electrónico"
+                       name="email" [(ngModel)]="cuentaModel.email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fechaNacimiento">
+                <div class="label-icon">📅</div>
+                Fecha de nacimiento
+            </label>
+            <input type="date" id="fechaNacimiento"
+                   name="fechaNacimiento" [(ngModel)]="cuentaModel.fechaNacimiento">
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-title">
+                <div class="label-icon">📄</div>
+                Subir documentos:
+            </div>
+            
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">🆔</div>
+                    INE
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="onUploadClick($event)">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+            
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">🏠</div>
+                    Comprobante de domicilio
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="onUploadClick($event)">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+            
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">📷</div>
+                    Foto
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="onUploadClick($event)">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+            
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">📋</div>
+                    CURP
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="onUploadClick($event)">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">ENVIAR</button>
+    </form>
+</div>

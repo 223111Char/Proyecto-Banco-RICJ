@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TerYcon } from './ter-ycon';
+import { SolicitudTarjetaComponent } from './solicitud-tarjeta';
 
-describe('TerYcon', () => {
-  let component: TerYcon;
-  let fixture: ComponentFixture<TerYcon>;
+describe('SolicitudTarjeta', () => {
+  let component: SolicitudTarjetaComponent;
+  let fixture: ComponentFixture<SolicitudTarjetaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TerYcon]
+      imports: [SolicitudTarjetaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TerYcon);
+    fixture = TestBed.createComponent(SolicitudTarjetaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

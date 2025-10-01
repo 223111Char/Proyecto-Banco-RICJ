@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globales de tu aplicación */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6fa8dc, #4a90b8);
+}
+
+/*
+  Esta es la clave: le decimos al componente raíz de Angular (app-root)
+  que ocupe toda la altura y que él sea el encargado de centrar el contenido
+  que venga del router-outlet. Esto es más robusto y evita los scrollbars.
+*/
+app-root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*
+  Ajuste para el diálogo personalizado de Términos y Condiciones.
+  Elimina el padding y fondo por defecto de Angular Material
+  para que nuestro propio estilo en el componente tome el control.
+*/
+.terminos-dialog-container .mat-dialog-container {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 12px; /* Opcional: Asegura que el contenedor base tenga el borde redondeado */
+}

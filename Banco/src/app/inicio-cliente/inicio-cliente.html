@@ -78,7 +78,7 @@
       <div class="panel">
         <h2>📊 Mis Movimientos</h2>
         <div class="filters">
-          <select class="filter-select" (change)="filterTransactions($event.target.value)">
+          <select class="filter-select" (change)="onFilterChange($event)">
             <option value="all">Todos los movimientos</option>
             <option value="income">Ingresos</option>
             <option value="expense">Gastos</option>
@@ -198,4 +198,3 @@
     </div>
   </div>
 </div>
-```
